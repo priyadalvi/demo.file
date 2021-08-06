@@ -1,0 +1,2 @@
+$ jekyll new .
+# Creates a Jekyll site in the current directory
