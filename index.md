@@ -122,10 +122,8 @@ Depending on your organisation's needs - number of users, storage size, and high
 	chown -R www-data. owncloud
 ```
 **ownCloud is now installed.** 
-To verify if it's ready to use, navigate to 
-   ```markdown  
-  <http://your-owncloud-domain>
-```.
+To verify if it's ready to use, navigate to [YourCloud Domain](http://your-owncloud-domain).
+
  
 For more information, refer [Detailed ownCloud Administration Guide](https://doc.owncloud.com/server/10.8/admin_manual/ownCloud_Admin_Manual.pdf).
 
@@ -146,9 +144,9 @@ You can connect Linux, Mac OS X, Windows, and mobile devices to your ownCloud se
 3. Import the Windows Server CA certificate in the **pem format** with **.crt suffix** to 
 ```markdown
     /usr/local/share/ca-certificates/
-    ```
+```
 4. Run command 
-```markdown 
+ ```markdown 
    update-ca-certificates
    ```
 5. In the **Server** tab of LDAP, enter the following details:
