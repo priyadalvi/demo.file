@@ -22,7 +22,7 @@ To install and configure ownCloud server, follow the steps below.
   - Change the Document Root 
     ```markdown 
     sed -i "s#html#owncloud#" /etc/apache2/sites-available/000-default.conf service apache2 restart 
-```  
+            ```  
   - Create a Virtual Host Configuration
  ```markdown 
      FILE="/etc/apache2/sites-available/owncloud.conf"
@@ -35,8 +35,7 @@ To install and configure ownCloud server, follow the steps below.
  	SetEnv HOME /var/www/owncloud
  	SetEnv HTTP_HOME /var/www/owncloud
 	</Directory>EOM 
-  ```
-  
+ ```
   - Enable the Virtual Host Configuration
 ```markdown 
  	a2ensite owncloud.conf
@@ -50,7 +49,6 @@ To install and configure ownCloud server, follow the steps below.
  	 TO owncloud@localhost \
  	 IDENTIFIED BY 'password'";
 ```
-
 - Enable the Recommended Apache Modules
 ```markdown 
 	echo "Enabling Apache Modules"
