@@ -20,10 +20,11 @@ To install and configure ownCloud server, follow the steps below.
 ## Configuration: Apache and Database
 1. Run the following commands in your **Terminal** to configure Apache.
   - Change the Document Root 
-    ```markdown 
-       sed -i "s#html#owncloud#" /etc/apache2/sites-available/000-default.conf service apache2 restart ```  
+ ```markdown 
+       sed -i "s#html#owncloud#" /etc/apache2/sites-available/000-default.conf service apache2 restart 
+ ```  
   - Create a Virtual Host Configuration
-    ```markdown 
+ ```markdown 
  	FILE="/etc/apache2/sites-available/owncloud.conf"
 	/bin/cat <<EOM >$FILE
 	Alias /owncloud "/var/www/owncloud/"<Directory /var/www/owncloud/>
@@ -33,7 +34,8 @@ To install and configure ownCloud server, follow the steps below.
  	</IfModule>
  	SetEnv HOME /var/www/owncloud
  	SetEnv HTTP_HOME /var/www/owncloud
-	</Directory>EOM ```
+	</Directory>EOM 
+```
   - Enable the Virtual Host Configuration
 ```markdown 
  	a2ensite owncloud.conf
@@ -45,7 +47,8 @@ To install and configure ownCloud server, follow the steps below.
 	mysql -u root -e "CREATE DATABASE IF NOT EXISTS owncloud; \
 	GRANT ALL PRIVILEGES ON owncloud.* \
  	 TO owncloud@localhost \
- 	 IDENTIFIED BY 'password'";```
+ 	 IDENTIFIED BY 'password'";
+```
 
 - Enable the Recommended Apache Modules
 ```markdown 
@@ -121,7 +124,8 @@ Depending on your organisation's needs - number of users, storage size, and high
 ```
 **ownCloud is now installed.** 
 To verify if it's ready to use, navigate to ```markdown  
-  <http://your-owncloud-domain>```.
+  <http://your-owncloud-domain>
+  ```.
  
 For more information, refer [Detailed ownCloud Administration Guide](https://doc.owncloud.com/server/10.8/admin_manual/ownCloud_Admin_Manual.pdf).
 
@@ -142,7 +146,8 @@ You can connect Linux, Mac OS X, Windows, and mobile devices to your ownCloud se
 3. Import the Windows Server CA certificate in the **pem format** with **.crt suffix** to ```markdown
     /usr/local/share/ca-certificates/```
 4. Run command ```markdown 
-   update-ca-certificates```
+   update-ca-certificates
+   ```
 5. In the **Server** tab of LDAP, enter the following details:
    ![Image](server-tab.png)
 - **Host**: The hostname or IP address of the LDAP server. 
