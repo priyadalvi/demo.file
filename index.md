@@ -20,12 +20,12 @@ To install and configure ownCloud server, follow the steps below.
 ## Configuration: Apache and Database
 1. Run the following commands in your **Terminal** to configure Apache.
   - Change the Document Root 
- ```markdown 
+    ```markdown 
     sed -i "s#html#owncloud#" /etc/apache2/sites-available/000-default.conf service apache2 restart 
- ```  
+```  
   - Create a Virtual Host Configuration
  ```markdown 
- 	  FILE="/etc/apache2/sites-available/owncloud.conf"
+     FILE="/etc/apache2/sites-available/owncloud.conf"
 	/bin/cat <<EOM >$FILE
 	Alias /owncloud "/var/www/owncloud/"<Directory /var/www/owncloud/>
 	  Options +FollowSymlinks
@@ -35,7 +35,8 @@ To install and configure ownCloud server, follow the steps below.
  	SetEnv HOME /var/www/owncloud
  	SetEnv HTTP_HOME /var/www/owncloud
 	</Directory>EOM 
-```
+  ```
+  
   - Enable the Virtual Host Configuration
 ```markdown 
  	a2ensite owncloud.conf
@@ -43,7 +44,7 @@ To install and configure ownCloud server, follow the steps below.
 ```
 2. Run the following commands in your **Terminal** to configure the database.
 - Configure the Database
-```markdown 
+   ```markdown 
 	mysql -u root -e "CREATE DATABASE IF NOT EXISTS owncloud; \
 	GRANT ALL PRIVILEGES ON owncloud.* \
  	 TO owncloud@localhost \
@@ -123,9 +124,10 @@ Depending on your organisation's needs - number of users, storage size, and high
 	chown -R www-data. owncloud
 ```
 **ownCloud is now installed.** 
-To verify if it's ready to use, navigate to ```markdown  
+To verify if it's ready to use, navigate to 
+   ```markdown  
   <http://your-owncloud-domain>
-  ```.
+```.
  
 For more information, refer [Detailed ownCloud Administration Guide](https://doc.owncloud.com/server/10.8/admin_manual/ownCloud_Admin_Manual.pdf).
 
