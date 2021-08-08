@@ -15,9 +15,9 @@
   - [License](#license)
   
 
-# As an administrator, how do I install and configure an owncloud server? 
+# As an administrator, how do I install and configure an ownCloud server? 
 
-The ownCloud offer four server installations packages, **Source Packages** , **Minimal Server Package**, **Docker**, and **Linux Distribution Packages**. Given below is an example to manually install ownCloud on fresh installation of Ubuntu 18.04. For more information see, [ownCloud Download Server Packages](https://owncloud.com/download-server/).
+The ownCloud offer four server installations packages, **Source Packages**, **Minimal Server Package**, **Docker**, and **Linux Distribution Packages**. Given below is an example to manually install ownCloud on fresh installation of Ubuntu 18.04. For more information see, [ownCloud Download Server Packages](https://owncloud.com/download-server/).
 
 To install and configure ownCloud server, follow the steps below. 
 ## Prerequisites and Preparation
@@ -136,7 +136,8 @@ Make sure the permissions are correct
 cd /var/www/
 chown -R www-data. owncloud
 ```
-**ownCloud is now installed and ready to use.**
+**ownCloud is now installed.** 
+To verify if it's ready to use, navigate to ```markdown<http://your-owncloud-domain>```.
  
 For more information, refer [Detailed ownCloud Administration Guide](https://doc.owncloud.com/server/10.8/admin_manual/ownCloud_Admin_Manual.pdf).
 
