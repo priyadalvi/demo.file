@@ -2,8 +2,8 @@
 # Table of Contents
   - [As an administrator, how do I install and configure an Owncloud server?](#as-an-administrator-how-do-i-install-and-configure-an-owncloud-server)
   - [As an administrator, how do I add a user account?](#as-an-administrator-how-do-i-add-a-user-account)
-  - [As a user, how do I connect to the owncloud server using a desktop or mobile client?](As-a-user-how-do-I-connect-to-the-owncloud-server-using-a-desktop-or-mobile-client?)
-  - [As an administrator, how do I enable users to connect to the Owncloud server using the server's IP address and port 8080?](as-an-administrator-how-do-i-enable-users-to-connect-to-the-owncloud-server-using-the-servers-ip-address-and-port-8080?)
+  - [As a user, how do I connect to the owncloud server using a desktop or mobile client?](As-a-user-how-do-I-connect-to-the-owncloud-server-using-a-desktop-or-mobile-client)
+  - [As an administrator, how do I enable users to connect to the Owncloud server using the server's IP address and port 8080?](as-an-administrator-how-do-i-enable-users-to-connect-to-the-owncloud-server-using-the-servers-ip-address-and-port-8080)
     
   
 
