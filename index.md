@@ -1,7 +1,7 @@
 
 # Table of Contents
-  - [As an administrator, how do I install and configure an Owncloud server?](#as-an-administrator-how-do-install)
-  - [Using Reverie on GitHub Pages](#using-reverie-on-github-pages)
+  - [As an administrator, how do I install and configure an Owncloud server?](#17)
+  - [Using Reverie on GitHub Pages](#26)
     - [1. Fork Reverie to your User Repository](#1-fork-reverie-to-your-user-repository)
     - [2. Customize and view your site](#2-customize-and-view-your-site)
     - [3. Publish your first blog post](#3-publish-your-first-blog-post)
