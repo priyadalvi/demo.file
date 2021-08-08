@@ -140,10 +140,11 @@ You can connect Linux, Mac OS X, Windows, and mobile devices to your ownCloud se
 1. Install the [LDAP Integration](https://marketplace.owncloud.com/apps/user_ldap) app. 
 2. Go to the Admin panel to configure LDAP. 
 3. Import the Windows Server CA certificate in the **pem format** with **.crt suffix** to ```markdown
-/usr/local/share/ca-certificates/```
-5. Run command ```markdown 
+    /usr/local/share/ca-certificates/```
+4. Run command ```markdown 
    update-ca-certificates```
-7. In the **Server** tab of LDAP, enter the following details:
+5. In the **Server** tab of LDAP, enter the following details:
+   ![Image](server-tab.png)
 - **Host**: The hostname or IP address of the LDAP server. 
 - **Port**: Enter the port number 8080.
 - **User DN**: The name as DN of a user who has permissions to do searches in the LDAP directory. 
