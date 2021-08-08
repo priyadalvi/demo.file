@@ -1,4 +1,7 @@
-
+---
+layout: page
+title: ownCloud Quickstart
+---
 # Table of Contents
   - [As an administrator, how do I install and configure an Owncloud server?](#17)
   - [Using Reverie on GitHub Pages](#26)
