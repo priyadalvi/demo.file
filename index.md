@@ -9,7 +9,6 @@
   - [As an administrator, how do I enable users to connect to the ownCloud server using the server's IP address and port 8080?](#as-an-administrator-how-do-i-enable-users-to-connect-to-the-owncloud-server-using-the-servers-ip-address-and-port-8080)
      
 # As an administrator, how do I install and configure an ownCloud server?
-
 You can install ownCloud [Manually](https://doc.owncloud.com/server/admin_manual/installation/manual_installation/), with [Docker Image](https://doc.owncloud.org/server/admin_manual/installation/docker/), or with an [Appliance](https://doc.owncloud.com/server/admin_manual/appliance/installation/installation.html). Given below is an example to manually install ownCloud on fresh installation of Ubuntu 18.04. For more information see, [ownCloud Download Server Packages](https://owncloud.com/download-server/).
 
 To install and configure ownCloud server, follow the steps below. 
@@ -19,11 +18,11 @@ To install and configure ownCloud server, follow the steps below.
 
 ## Configuration: Apache and Database
 1. Run the following commands in your **Terminal** to configure Apache.
-      - Change the Document Root 
+   - Change the Document Root 
        ```markdown 
           sed -i "s#html#owncloud#" /etc/apache2/sites-available/000-default.conf service apache2 restart 
       ```  
-      - Create a Virtual Host Configuration
+    - Create a Virtual Host Configuration
         ```markdown 
            FILE="/etc/apache2/sites-available/owncloud.conf"
 	/bin/cat <<EOM >$FILE
@@ -132,12 +131,12 @@ The ownCloud’s default view displays basic information about all the users. 
    ![Image](users-page-new-user.png)
 2. Add group membership to the user. _This is optional._ 
 3. Click the **Create** button.
-   The newly added user is now added to the list of users in default view.
+   The newly added user is now added to the list of users in the default view.
   
 # As a user, how do I connect to the ownCloud server using a desktop or mobile client?
 You can connect Linux, Mac OS X, Windows, and mobile devices to your ownCloud server via [WebDAV](https://en.wikipedia.org/wiki/WebDAV). Use the [ownCloud Desktop](https://owncloud.com/desktop-app/) Client to keep your desktop PC synchronized with your ownCloud server. To sync your ownCloud server with Android and Apple iOS devices, use the [ownCloud Mobile apps](https://owncloud.com/mobile-apps/). 
 
-# As an administrator, how do I enable users to connect to the Owncloud server using the server's IP address and port 8080?
+# As an administrator, how do I enable users to connect to the ownCloud server using the server's IP address and port 8080?
 1. Install the [LDAP Integration](https://marketplace.owncloud.com/apps/user_ldap) app. 
 2. Go to the Admin panel to configure LDAP. 
 3. Import the Windows Server CA certificate in the **pem format** with **.crt suffix** to 
