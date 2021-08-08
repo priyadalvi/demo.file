@@ -22,50 +22,50 @@ To install and configure ownCloud server, follow the steps below.
 
   - Change the Document Root 
 ```markdown
-sed -i "s#html#owncloud#" /etc/apache2/sites-available/000-default.conf
-service apache2 restart
+    sed -i "s#html#owncloud#" /etc/apache2/sites-available/000-default.conf
+ 		service apache2 restart
 ```
   - Create a Virtual Host Configuration
 ```markdown 
- FILE="/etc/apache2/sites-available/owncloud.conf"
-/bin/cat <<EOM >$FILE
-Alias /owncloud "/var/www/owncloud/"<Directory /var/www/owncloud/>
-  Options +FollowSymlinks
-  AllowOverride All<IfModule mod_dav.c>
-  Dav off
- </IfModule>
- SetEnv HOME /var/www/owncloud
- SetEnv HTTP_HOME /var/www/owncloud
-</Directory>EOM
+ 	FILE="/etc/apache2/sites-available/owncloud.conf"
+	/bin/cat <<EOM >$FILE
+	Alias /owncloud "/var/www/owncloud/"<Directory /var/www/owncloud/>
+	  Options +FollowSymlinks
+	  AllowOverride All<IfModule mod_dav.c>
+ 	 Dav off
+ 	</IfModule>
+ 	SetEnv HOME /var/www/owncloud
+ 	SetEnv HTTP_HOME /var/www/owncloud
+	</Directory>EOM
 ```
   - Enable the Virtual Host Configuration
 ```markdown 
- a2ensite owncloud.conf
- service apache2 reload
+ 	a2ensite owncloud.conf
+ 	service apache2 reload
 ```
 2. Run the following commands in your **Terminal** to configure the database.
 - Configure the Database
 ```markdown 
-mysql -u root -e "CREATE DATABASE IF NOT EXISTS owncloud; \
-GRANT ALL PRIVILEGES ON owncloud.* \
-  TO owncloud@localhost \
-  IDENTIFIED BY 'password'";
+	mysql -u root -e "CREATE DATABASE IF NOT EXISTS owncloud; \
+	GRANT ALL PRIVILEGES ON owncloud.* \
+ 	 TO owncloud@localhost \
+ 	 IDENTIFIED BY 'password'";
 ```
 - Enable the Recommended Apache Modules
 ```markdown 
-echo "Enabling Apache Modules"
-a2enmod dir env headers mime rewrite setenvif
-service apache2 reload
+	echo "Enabling Apache Modules"
+	a2enmod dir env headers mime rewrite setenvif
+	service apache2 reload
 ```
 ## Download and Installation
 Depending on your organisation's needs - number of users, storage size, and high availability level - you can choose the right edition for your organisation. For more information, see [ownCloud Editions](https://owncloud.com/find-the-right-edition/).
 
 1. Download the ownCloud using the command:
 ```markdown 
-cd /var/www/
-wget https://download.owncloud.org/community/owncloud-10.8.0.tar.bz2 && \
-tar -xjf owncloud-10.8.0.tar.bz2 && \
-chown -R www-data.owncloud
+	cd /var/www/
+	wget https://download.owncloud.org/community/owncloud-10.8.0.tar.bz2 && \
+	tar -xjf owncloud-10.8.0.tar.bz2 && \
+	chown -R www-data.owncloud
 ```
 2. Install the ownCloud using the command:
 ```markdown 
@@ -79,52 +79,52 @@ chown -R www-data.owncloud
 ```
 3. Configure ownCloud’s Trusted Domains using the command:
 ```markdown
-myip=$(hostname -I|cut -f1 -d ' ')
-occ config:system:set trusted_domains 1 --value="$myip"
+	myip=$(hostname -I|cut -f1 -d ' ')
+	occ config:system:set trusted_domains 1 --value="$myip"
 ```
 4. Set your background job mode to [Cron](https://doc.owncloud.com/server/10.8/admin_manual/configuration/server/background_jobs_configuration.html) using the following command.
 ```markdown
-occ background:cron
-echo "*/15  *  *  *  * /var/www/owncloud/occ system:cron" \
-  > /var/spool/cron/crontabs/www-data
-chown www-data.crontab /var/spool/cron/crontabs/www-data
-chmod 0600 /var/spool/cron/crontabs/www-data
+	occ background:cron
+	echo "*/15  *  *  *  * /var/www/owncloud/occ system:cron" \
+ 	 > /var/spool/cron/crontabs/www-data
+	chown www-data.crontab /var/spool/cron/crontabs/www-data
+	chmod 0600 /var/spool/cron/crontabs/www-data
 ```
 5. Configure Caching and File Locking using the command:
 ```markdown
-occ config:system:set \
-   memcache.local \
-   --value '\OC\Memcache\APCu'
-occ config:system:set \
-   memcache.locking \
-   --value '\OC\Memcache\Redis'
-occ config:system:set \
-   redis \
-   --value '{"host": "127.0.0.1", "port": "6379"}' \
-   --type json
+	occ config:system:set \
+	   memcache.local \
+	   --value '\OC\Memcache\APCu'
+	occ config:system:set \
+	   memcache.locking \
+ 	  --value '\OC\Memcache\Redis'
+	occ config:system:set \
+ 	  redis \
+	   --value '{"host": "127.0.0.1", "port": "6379"}' \
+  	 --type json
 ```
 6. Configure [Log Rotation](https://linux.die.net/man/8/logrotate) using the command:
 ```markdown
-FILE="/etc/logrotate.d/owncloud"
-sudo /bin/cat <<EOM >$FILE
-/var/www/owncloud/data/owncloud.log {
-  size 10M
-  rotate 12
-  copytruncate
-  missingok
-  compress
-  compresscmd /bin/gzip
-}
-EOM
+	FILE="/etc/logrotate.d/owncloud"
+	sudo /bin/cat <<EOM >$FILE
+	/var/www/owncloud/data/owncloud.log {
+	  size 10M
+	  rotate 12
+	  copytruncate
+ 	 missingok
+ 	 compress
+ 	 compresscmd /bin/gzip
+	}
+	EOM
 ```
 7. Complete the installation using the command:
 ```markdown
-Make sure the permissions are correct
-cd /var/www/
-chown -R www-data. owncloud
+	Make sure the permissions are correct
+	cd /var/www/
+	chown -R www-data. owncloud
 ```
 **ownCloud is now installed.** 
-To verify if it's ready to use, navigate to ```markdown<http://your-owncloud-domain>```.
+To verify if it's ready to use, navigate to ```markdown <http://your-owncloud-domain>```.
  
 For more information, refer [Detailed ownCloud Administration Guide](https://doc.owncloud.com/server/10.8/admin_manual/ownCloud_Admin_Manual.pdf).
 
