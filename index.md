@@ -38,13 +38,9 @@ service apache2 restart
 ```markdown 
  FILE="/etc/apache2/sites-available/owncloud.conf"
 /bin/cat <<EOM >$FILE
-Alias /owncloud "/var/www/owncloud/"
-  
-<Directory /var/www/owncloud/>
+Alias /owncloud "/var/www/owncloud/"<Directory /var/www/owncloud/>
   Options +FollowSymlinks
-  AllowOverride All
-
- <IfModule mod_dav.c>
+  AllowOverride All<IfModule mod_dav.c>
   Dav off
  </IfModule>
 
