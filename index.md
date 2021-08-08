@@ -1,5 +1,4 @@
 
-
 # Table of Contents
   - [As an administrator, how do I install and configure an Owncloud server?](#as-an-administrator-how-do-install)
   - [Using Reverie on GitHub Pages](#using-reverie-on-github-pages)
@@ -145,9 +144,16 @@ For more information, refer [Detailed ownCloud Administration Guide](https://doc
 
 
 
+# As an administrator, how do I add a user account? 
+The ownCloud’s default view displays basic information about all the users.
 
+To add a new user, 
 
+1. Enter an username and E-Mail of the new user.
+2. Optionally, add group membership to the user. 
+3. Click the Create button.
 
+The newly added user is now added to the list of users in default view.
 
 
 
