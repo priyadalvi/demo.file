@@ -1,9 +1,6 @@
----
-layout: page
-title: ownCloud Quickstart
----
+
 # Table of Contents
-  - [As an administrator, how do I install and configure an Owncloud server?](#17)
+  - [As an administrator, how do I install and configure an Owncloud server?](#as-an-administrator-how-do-i-install-and-configure-an-ownCloud-server)
   - [Using Reverie on GitHub Pages](#26)
     - [1. Fork Reverie to your User Repository](#1-fork-reverie-to-your-user-repository)
     - [2. Customize and view your site](#2-customize-and-view-your-site)
@@ -17,7 +14,7 @@ title: ownCloud Quickstart
   - [License](#license)
   
 
-# As an administrator, how do I install and configure an ownCloud server? 
+# As an administrator, how do I install and configure an ownCloud server
 
 You can install ownCloud [Manually](https://doc.owncloud.com/server/admin_manual/installation/manual_installation/), with [Docker Image](https://doc.owncloud.org/server/admin_manual/installation/docker/), or with an [Appliance](https://doc.owncloud.com/server/admin_manual/appliance/installation/installation.html). Given below is an example to manually install ownCloud on fresh installation of Ubuntu 18.04. For more information see, [ownCloud Download Server Packages](https://owncloud.com/download-server/).
 
