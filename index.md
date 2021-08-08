@@ -26,11 +26,11 @@
  dgdkgd
 
 
-## Welcome to GitHub Page
+# As an administrator, how do I install and configure an owncloud server? 
 
-You can use the [editor on GitHub](https://github.com/priyadalvi/demo.file/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+The ownCloud offer four server installations packages, Source Packages, Minimal Sever Package, Docker, and Linux Distribution Packages. Given below is an example to manually install ownCloud on fresh installation of Ubuntu 18.04. For more information see, [ownCloud Download Server Packages](https://owncloud.com/download-server/) .
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+##
 
 ### Markdown
 
