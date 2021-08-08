@@ -149,15 +149,16 @@ The ownCloud’s default view displays basic information about all the users.
 
 To add a new user, 
 
-1. Enter an username and E-Mail of the new user.
+1. Enter username and e-mail of the new user.
+![Image](users-page-new-user.png)
 2. Optionally, add group membership to the user. 
 3. Click the Create button.
 
 The newly added user is now added to the list of users in default view.
 
+![Image](users-page-new-user.png)
 
 
 
-
-[Link](url) and ![Image](src)
+[Link](url) and 
 
