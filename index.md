@@ -1,6 +1,9 @@
 
 # Table of Contents
   - [As an administrator, how do I install and configure an ownCloud server?](#as-an-administrator-how-do-i-install-and-configure-an-owncloud-server)
+      - [Prerequisites and Preparation](#prerequisites-and-preparation)
+      - [Configuration: Apache and Database](#configuration-apache-and-database)
+      - [Download and Installation](#download-and-installation)
   - [As an administrator, how do I add a user account?](#as-an-administrator-how-do-i-add-a-user-account)
   - [As a user, how do I connect to the ownCloud server using a desktop or mobile client?](#as-a-user-how-do-i-connect-to-the-owncloud-server-using-a-desktop-or-mobile-client)
   - [As an administrator, how do I enable users to connect to the ownCloud server using the server's IP address and port 8080?](#as-an-administrator-how-do-i-enable-users-to-connect-to-the-owncloud-server-using-the-servers-ip-address-and-port-8080)
@@ -135,8 +138,7 @@ The ownCloud’s default view displays basic information about all the users. 
 2. Optionally, add group membership to the user. 
 3. Click the Create button.
    The newly added user is now added to the list of users in default view.
-   ![Image](adduser.png)
-
+  
 
 # As a user, how do I connect to the owncloud server using a desktop or mobile client?
 You can connect Linux, Mac OS X, Windows, and mobile devices to your ownCloud server via [WebDAV](https://en.wikipedia.org/wiki/WebDAV). Use the [ownCloud Desktop](https://owncloud.com/desktop-app/) Client to keep your desktop PC synchronized with your ownCloud server. To sync your ownCloud server with Android and Apple iOS devices, use the [ownCloud Mobile apps](https://owncloud.com/mobile-apps/). 
