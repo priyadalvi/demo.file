@@ -14,29 +14,18 @@
   - [The name?](#the-name)
   - [License](#license)
   
-  # As an administrator, how do I install?
-  this is a sample oevrview.
-  
-# pagination is the only constant?
-
-## Fork Reverie to your User Repository
-
- # License
- thsi is jgljgd
- dgdkgd
-
 
 # As an administrator, how do I install and configure an owncloud server? 
 
-The ownCloud offer four server installations packages, Source Packages, Minimal Sever Package, Docker, and Linux Distribution Packages. Given below is an example to manually install ownCloud on fresh installation of Ubuntu 18.04. For more information see, [ownCloud Download Server Packages](https://owncloud.com/download-server/).
+The ownCloud offer four server installations packages, **Source Packages** , **Minimal Server Package**, **Docker**, and **Linux Distribution Packages**. Given below is an example to manually install ownCloud on fresh installation of Ubuntu 18.04. For more information see, [ownCloud Download Server Packages](https://owncloud.com/download-server/).
 
-To install and configure and ownCloud server, follow the steps below. 
+To install and configure ownCloud server, follow the steps below. 
 ## Prerequisites and Preparation
 
-- Ensure the prerequisites are met and the required/recommended packages are installed before installing the owncloud server. For more information, see [Prerequisites and Preparation](https://doc.owncloud.com/server/10.8/admin_manual/installation/quick_guides/ubuntu_18_04.html).
+- Ensure the prerequisites are met and the required/recommended packages are installed before installing ownCloud. For more information, see [Prerequisites and Preparation](https://doc.owncloud.com/server/10.8/admin_manual/installation/quick_guides/ubuntu_18_04.html).
 
 ## Configuration: Apache and Database
-1. Run the following commands in your Terminal to configure Apache.
+1. Run the following commands in your **Terminal** to configure Apache.
 
 - Change the Document Root 
 ```markdown
@@ -68,7 +57,7 @@ a2ensite owncloud.conf
 service apache2 reload
 ```
 
-2. Run the following commands in your Terminal to configure the database.
+2. Run the following commands in your **Terminal** to configure the database.
 - Configure the Database
 ```markdown 
 mysql -u root -e "CREATE DATABASE IF NOT EXISTS owncloud; \
@@ -83,17 +72,15 @@ a2enmod dir env headers mime rewrite setenvif
 service apache2 reload
 ```
 ## Download and Installation
+Depending on your organisation's needs - number of users, storage size, and high availability level - you can choose the right edition for your organisation. For more information, see [ownCloud Editions](https://owncloud.com/find-the-right-edition/).
 1. Download the ownCloud using the command:
 ```markdown 
 cd /var/www/
 wget https://download.owncloud.org/community/owncloud-10.8.0.tar.bz2 && \
 tar -xjf owncloud-10.8.0.tar.bz2 && \
 chown -R www-data.owncloud
-```markdown 
-To find the right edition for your organisation, see [ownCloud Editions](https://owncloud.com/find-the-right-edition/).
-
+```
 2. Install the ownCloud using the command:
-
 ```markdown 
      cc maintenance:install \
     --database "mysql" \
@@ -143,16 +130,15 @@ sudo /bin/cat <<EOM >$FILE
 }
 EOM
 ```
-
-7. Complete the Installation using the command:
+7. Complete the installation using the command:
 ```markdown
 Make sure the permissions are correct
 cd /var/www/
 chown -R www-data. owncloud
 ```
-ownCloud is now installed and ready to use.
+**ownCloud is now installed and ready to use.**
  
-
+For more information, refer [Detailed ownCloud Administration Guide](https://doc.owncloud.com/server/10.8/admin_manual/ownCloud_Admin_Manual.pdf).
 
 
 
