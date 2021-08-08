@@ -18,14 +18,14 @@ To install and configure ownCloud server, follow the steps below.
 - Ensure the prerequisites are met and the required/recommended packages are installed before installing ownCloud. For more information, see [Prerequisites and Preparation](https://doc.owncloud.com/server/10.8/admin_manual/installation/quick_guides/ubuntu_18_04.html).
 
 ## Configuration: Apache and Database
-   1. Run the following commands in your **Terminal** to configure Apache.
+1. Run the following commands in your **Terminal** to configure Apache.
       - Change the Document Root 
        ```markdown 
           sed -i "s#html#owncloud#" /etc/apache2/sites-available/000-default.conf service apache2 restart 
-            ```  
-     - Create a Virtual Host Configuration
+      ```  
+      - Create a Virtual Host Configuration
         ```markdown 
-          FILE="/etc/apache2/sites-available/owncloud.conf"
+           FILE="/etc/apache2/sites-available/owncloud.conf"
 	/bin/cat <<EOM >$FILE
 	Alias /owncloud "/var/www/owncloud/"<Directory /var/www/owncloud/>
 	  Options +FollowSymlinks
@@ -58,7 +58,7 @@ To install and configure ownCloud server, follow the steps below.
 ## Download and Installation
 Depending on your organisation's needs - number of users, storage size, and high availability level - you can choose the right edition for your organisation. For more information, see [ownCloud Editions](https://owncloud.com/find-the-right-edition/).
 
-  1. Download the ownCloud using the command:
+1. Download the ownCloud using the command:
       ```markdown 
 	cd /var/www/
 	wget https://download.owncloud.org/community/owncloud-10.8.0.tar.bz2 && \
