@@ -35,7 +35,7 @@ To install and configure ownCloud server, follow the steps below.
  	SetEnv HOME /var/www/owncloud
  	SetEnv HTTP_HOME /var/www/owncloud
 	</Directory>EOM 
- ```
+     ```
   - Enable the Virtual Host Configuration
 ```markdown 
  	a2ensite owncloud.conf
@@ -59,14 +59,14 @@ To install and configure ownCloud server, follow the steps below.
 ## Download and Installation
 Depending on your organisation's needs - number of users, storage size, and high availability level - you can choose the right edition for your organisation. For more information, see [ownCloud Editions](https://owncloud.com/find-the-right-edition/).
 
-1. Download the ownCloud using the command:
+  1. Download the ownCloud using the command:
       ```markdown 
 	cd /var/www/
 	wget https://download.owncloud.org/community/owncloud-10.8.0.tar.bz2 && \
 	tar -xjf owncloud-10.8.0.tar.bz2 && \
 	chown -R www-data.owncloud
 ```
-  2. Install the ownCloud using the command:
+   2. Install the ownCloud using the command:
       ```markdown 
      cc maintenance:install \
     --database "mysql" \
@@ -76,12 +76,12 @@ Depending on your organisation's needs - number of users, storage size, and high
     --admin-user "admin" \
     --admin-pass "admin"
 ```
- 3. Configure ownCloud’s Trusted Domains using the command:
+  3. Configure ownCloud’s Trusted Domains using the command:
      ```markdown
 	myip=$(hostname -I|cut -f1 -d ' ')
 	occ config:system:set trusted_domains 1 --value="$myip"
 ```
- 4. Set your background job mode to [Cron](https://doc.owncloud.com/server/10.8/admin_manual/configuration/server/background_jobs_configuration.html) using the following command.
+  4. Set your background job mode to [Cron](https://doc.owncloud.com/server/10.8/admin_manual/configuration/server/background_jobs_configuration.html) using the following command.
    ```markdown
 	occ background:cron
 	echo "*/15  *  *  *  * /var/www/owncloud/occ system:cron" \
