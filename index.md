@@ -21,11 +21,11 @@ To install and configure ownCloud server, follow the steps below.
 1. Run the following commands in your **Terminal** to configure Apache.
   - Change the Document Root 
  ```markdown 
-       sed -i "s#html#owncloud#" /etc/apache2/sites-available/000-default.conf service apache2 restart 
+    sed -i "s#html#owncloud#" /etc/apache2/sites-available/000-default.conf service apache2 restart 
  ```  
   - Create a Virtual Host Configuration
  ```markdown 
- 	FILE="/etc/apache2/sites-available/owncloud.conf"
+ 	  FILE="/etc/apache2/sites-available/owncloud.conf"
 	/bin/cat <<EOM >$FILE
 	Alias /owncloud "/var/www/owncloud/"<Directory /var/www/owncloud/>
 	  Options +FollowSymlinks
@@ -143,9 +143,12 @@ You can connect Linux, Mac OS X, Windows, and mobile devices to your ownCloud se
 # As an administrator, how do I enable users to connect to the Owncloud server using the server's IP address and port 8080?
 1. Install the [LDAP Integration](https://marketplace.owncloud.com/apps/user_ldap) app. 
 2. Go to the Admin panel to configure LDAP. 
-3. Import the Windows Server CA certificate in the **pem format** with **.crt suffix** to ```markdown
-    /usr/local/share/ca-certificates/```
-4. Run command ```markdown 
+3. Import the Windows Server CA certificate in the **pem format** with **.crt suffix** to 
+```markdown
+    /usr/local/share/ca-certificates/
+    ```
+4. Run command 
+```markdown 
    update-ca-certificates
    ```
 5. In the **Server** tab of LDAP, enter the following details:
