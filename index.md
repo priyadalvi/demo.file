@@ -152,10 +152,20 @@ The newly added user is now added to the list of users in default view.
 ![Image](adduser.png)
 
 
+
 # As a user, how do I connect to the owncloud server using a desktop or mobile client?
 You can connect Linux, Mac OS X, Windows, and mobile devices to your ownCloud server via [WebDAV](https://en.wikipedia.org/wiki/WebDAV). Use the [ownCloud Desktop](https://owncloud.com/desktop-app/) Client to keep your desktop PC synchronized with your ownCloud server. To sync your ownCloud server with Android and Apple iOS devices, use the [ownCloud Mobile apps](https://owncloud.com/mobile-apps/). 
 
 
-
-
+# As an administrator, how do I enable users to connect to the Owncloud server using the server's IP address and port 8080?
+1. Install the [LDAP Integration](https://marketplace.owncloud.com/apps/user_ldap) app. 
+2. Go to the Admin panel to configure LDAP. 
+3. Import the Windows Server CA certificate in the **pem format** with **.crt suffix** to ```markdown/usr/local/share/ca-certificates/```
+4. Run command ```markdown update-ca-certificates```
+5. In the Server tab of LDAP, enter the following details:
+- Host: The hostname or IP address of the LDAP server. 
+- Port: Enter the port number 8080.
+- User DN: The name as DN of a user who has permissions to do searches in the LDAP directory. 
+- Password: The password of the mentioned user. 
+- Base DN: The base DN of LDAP, from where all users and groups can be reached. 
 
