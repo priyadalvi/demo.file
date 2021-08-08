@@ -1,20 +1,13 @@
 
 # Table of Contents
-  - [As an administrator, how do I install and configure an Owncloud server?](#as-an-administrator-how-do-i-install-and-configure-an-ownCloud-server)
-  - [Using Reverie on GitHub Pages](#26)
-    - [1. Fork Reverie to your User Repository](#1-fork-reverie-to-your-user-repository)
-    - [2. Customize and view your site](#2-customize-and-view-your-site)
-    - [3. Publish your first blog post](#3-publish-your-first-blog-post)
-  - [Using Categories in Reverie](#using-categories-in-reverie)
-  - [Pagination](#pagination-is-the-only-constant?)
-  - [RSS](#rss)
-  - [Sitemap](#sitemap)
-  - [Emailware](#emailware)
-  - [The name?](#the-name)
-  - [License](#license)
+  - [As an administrator, how do I install and configure an Owncloud server?](#as-an-administrator-how-do-i-install-and-configure-an-owncloud-server)
+  - [As an administrator, how do I add a user account?](#as-an-administrator-how-do-i-add-a-user-account)
+  - [As a user, how do I connect to the owncloud server using a desktop or mobile client?](As-a-user-how-do-I-connect-to-the-owncloud-server-using-a-desktop-or-mobile-client?)
+  - [As an administrator, how do I enable users to connect to the Owncloud server using the server's IP address and port 8080?](as-an-administrator-how-do-i-enable-users-to-connect-to-the-owncloud-server-using-the-servers-ip-address-and-port-8080?)
+    
   
 
-# As an administrator, how do I install and configure an ownCloud server
+# As an administrator, how do I install and configure an ownCloud server?
 
 You can install ownCloud [Manually](https://doc.owncloud.com/server/admin_manual/installation/manual_installation/), with [Docker Image](https://doc.owncloud.org/server/admin_manual/installation/docker/), or with an [Appliance](https://doc.owncloud.com/server/admin_manual/appliance/installation/installation.html). Given below is an example to manually install ownCloud on fresh installation of Ubuntu 18.04. For more information see, [ownCloud Download Server Packages](https://owncloud.com/download-server/).
 
