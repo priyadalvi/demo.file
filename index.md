@@ -17,48 +17,8 @@ To install and configure ownCloud server, follow the steps below.
 - Ensure the prerequisites are met and the required/recommended packages are installed before installing ownCloud. For more information, see [Prerequisites and Preparation](https://doc.owncloud.com/server/10.8/admin_manual/installation/quick_guides/ubuntu_18_04.html).
 
 ## Configuration: Apache and Database
-1. Run the following commands in your **Terminal** to configure Apache.
-   - Change the Document Root 
-       ```markdown 
-        sed -i "s#html#owncloud#" /etc/apache2/sites-available/000-default.conf 
-        service apache2 restart 
- ```  
-    - Create a Virtual Host Configuration
-    ```markdown 
-    FILE="/etc/apache2/sites-available/owncloud.conf"
-    /bin/cat <<EOM >$FILE
-    Alias /owncloud "/var/www/owncloud/"
-    <Directory /var/www/owncloud/>
-    Options +FollowSymlinks
-    AllowOverride All
-    <IfModule mod_dav.c>
-    Dav off
-    </IfModule>
-    SetEnv HOME /var/www/owncloud
-    SetEnv HTTP_HOME /var/www/owncloud
-    </Directory>
-     EOM
-   ```
-- Enable the Virtual Host Configuration
-    ```markdown 
- 	a2ensite owncloud.conf
- 	service apache2 reload
-```
-2. Run the following commands in your **Terminal** to configure the database.
-- Configure the Database
-   ```markdown 
-	mysql -u root -e "CREATE DATABASE IF NOT EXISTS owncloud; \
-	GRANT ALL PRIVILEGES ON owncloud.* \
- 	 TO owncloud@localhost \
- 	 IDENTIFIED BY 'password'";
-```
-- Enable the Recommended Apache Modules
-```markdown 
-	echo "Enabling Apache Modules"
-	a2enmod dir env headers mime rewrite setenvif
-	service apache2 reload
-```
-
+1. Run these [commands](https://doc.owncloud.com/server/10.8/admin_manual/installation/quick_guides/ubuntu_18_04.html#configure-apache) in your **Terminal** to configure Apache and your database.
+  
 ## Download and Installation
 Depending on your organisation's needs - number of users, storage size, and high availability level - you can choose the right edition for your organisation. For more information, see [ownCloud Editions](https://owncloud.com/find-the-right-edition/).
 
