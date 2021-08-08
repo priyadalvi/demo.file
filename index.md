@@ -6,7 +6,7 @@
      - [Download and Installation](#download-and-installation)
   - [As an administrator, how do I add a user account?](#as-an-administrator-how-do-i-add-a-user-account)
   - [As a user, how do I connect to the ownCloud server using a desktop or mobile client?](#as-a-user-how-do-i-connect-to-the-owncloud-server-using-a-desktop-or-mobile-client)
- - [As an administrator, how do I enable users to connect to the ownCloud server using the server's IP address and port 8080?](#as-an-administrator-how-do-i-enable-users-to-connect-to-the-owncloud-server-using-the-servers-ip-address-and-port-8080)
+  - [As an administrator, how do I enable users to connect to the ownCloud server using the server's IP address and port 8080?](#as-an-administrator-how-do-i-enable-users-to-connect-to-the-owncloud-server-using-the-servers-ip-address-and-port-8080)
      
 # As an administrator, how do I install and configure an ownCloud server?
 You can install ownCloud [Manually](https://doc.owncloud.com/server/admin_manual/installation/manual_installation/), with [Docker Image](https://doc.owncloud.org/server/admin_manual/installation/docker/), or with an [Appliance](https://doc.owncloud.com/server/admin_manual/appliance/installation/installation.html). Given below is an example to manually install ownCloud on fresh installation of Ubuntu 18.04. For more information see, [ownCloud Download Server Packages](https://owncloud.com/download-server/).
