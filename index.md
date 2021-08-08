@@ -34,18 +34,15 @@ Alias /owncloud "/var/www/owncloud/"<Directory /var/www/owncloud/>
   AllowOverride All<IfModule mod_dav.c>
   Dav off
  </IfModule>
-
  SetEnv HOME /var/www/owncloud
  SetEnv HTTP_HOME /var/www/owncloud
-</Directory>
-EOM
+</Directory>EOM
 ```
 - Enable the Virtual Host Configuration
 ```markdown 
-a2ensite owncloud.conf
-service apache2 reload
+ a2ensite owncloud.conf
+ service apache2 reload
 ```
-
 2. Run the following commands in your **Terminal** to configure the database.
 - Configure the Database
 ```markdown 
@@ -130,7 +127,6 @@ To verify if it's ready to use, navigate to ```markdown<http://your-owncloud-dom
  
 For more information, refer [Detailed ownCloud Administration Guide](https://doc.owncloud.com/server/10.8/admin_manual/ownCloud_Admin_Manual.pdf).
 
-
 # As an administrator, how do I add a user account? 
 The ownCloud’s default view displays basic information about all the users. To add a new user, 
 1. Enter username and e-mail of the new user.
@@ -139,7 +135,6 @@ The ownCloud’s default view displays basic information about all the users. 
 3. Click the Create button.
    The newly added user is now added to the list of users in default view.
   
-
 # As a user, how do I connect to the owncloud server using a desktop or mobile client?
 You can connect Linux, Mac OS X, Windows, and mobile devices to your ownCloud server via [WebDAV](https://en.wikipedia.org/wiki/WebDAV). Use the [ownCloud Desktop](https://owncloud.com/desktop-app/) Client to keep your desktop PC synchronized with your ownCloud server. To sync your ownCloud server with Android and Apple iOS devices, use the [ownCloud Mobile apps](https://owncloud.com/mobile-apps/). 
 
