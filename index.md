@@ -4,7 +4,7 @@
       - [Prerequisites and Preparation](#prerequisites-and-preparation)
       - [Configuration: Apache and Database](#configuration-apache-and-database)
       - [Download and Installation](#download-and-installation)
-  - [As an administrator, how do I add a user account?](#as-an-administrator-how-do-i-add-a-user-account)
+ - [As an administrator, how do I add a user account?](#as-an-administrator-how-do-i-add-a-user-account)
   - [As a user, how do I connect to the ownCloud server using a desktop or mobile client?](#as-a-user-how-do-i-connect-to-the-owncloud-server-using-a-desktop-or-mobile-client)
   - [As an administrator, how do I enable users to connect to the ownCloud server using the server's IP address and port 8080?](#as-an-administrator-how-do-i-enable-users-to-connect-to-the-owncloud-server-using-the-servers-ip-address-and-port-8080)
      
@@ -17,7 +17,7 @@ To install and configure ownCloud server, follow the steps below.
 - Ensure the prerequisites are met and the required/recommended packages are installed before installing ownCloud. For more information, see [Prerequisites and Preparation](https://doc.owncloud.com/server/10.8/admin_manual/installation/quick_guides/ubuntu_18_04.html).
 
 ## Configuration: Apache and Database
-1. Run these [commands](https://doc.owncloud.com/server/10.8/admin_manual/installation/quick_guides/ubuntu_18_04.html#configure-apache) in your **Terminal** to configure Apache and your database.
+- Run these [commands](https://doc.owncloud.com/server/10.8/admin_manual/installation/quick_guides/ubuntu_18_04.html#configure-apache) in your **Terminal** to configure Apache and your database.
   
 ## Download and Installation
 Depending on your organisation's needs - number of users, storage size, and high availability level - you can choose the right edition for your organisation. For more information, see [ownCloud Editions](https://owncloud.com/find-the-right-edition/).
@@ -117,4 +117,3 @@ You can connect Linux, Mac OS X, Windows, and mobile devices to your ownCloud se
 - **User DN**: The name as DN of a user who has permissions to do searches in the LDAP directory. 
 - **Password**: The password of the mentioned user. 
 - **Base DN**: The base DN of LDAP, from where all users and groups can be reached. 
-
