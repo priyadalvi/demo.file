@@ -55,6 +55,7 @@ To install and configure ownCloud server, follow the steps below.
 	a2enmod dir env headers mime rewrite setenvif
 	service apache2 reload
 ```
+
 ## Download and Installation
 Depending on your organisation's needs - number of users, storage size, and high availability level - you can choose the right edition for your organisation. For more information, see [ownCloud Editions](https://owncloud.com/find-the-right-edition/).
 
