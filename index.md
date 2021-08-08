@@ -18,14 +18,14 @@ To install and configure ownCloud server, follow the steps below.
 - Ensure the prerequisites are met and the required/recommended packages are installed before installing ownCloud. For more information, see [Prerequisites and Preparation](https://doc.owncloud.com/server/10.8/admin_manual/installation/quick_guides/ubuntu_18_04.html).
 
 ## Configuration: Apache and Database
-1. Run the following commands in your **Terminal** to configure Apache.
-  - Change the Document Root 
-    ```markdown 
-    sed -i "s#html#owncloud#" /etc/apache2/sites-available/000-default.conf service apache2 restart 
+   1. Run the following commands in your **Terminal** to configure Apache.
+      - Change the Document Root 
+       ```markdown 
+          sed -i "s#html#owncloud#" /etc/apache2/sites-available/000-default.conf service apache2 restart 
             ```  
-  - Create a Virtual Host Configuration
- ```markdown 
-     FILE="/etc/apache2/sites-available/owncloud.conf"
+     - Create a Virtual Host Configuration
+        ```markdown 
+          FILE="/etc/apache2/sites-available/owncloud.conf"
 	/bin/cat <<EOM >$FILE
 	Alias /owncloud "/var/www/owncloud/"<Directory /var/www/owncloud/>
 	  Options +FollowSymlinks
@@ -58,14 +58,14 @@ To install and configure ownCloud server, follow the steps below.
 ## Download and Installation
 Depending on your organisation's needs - number of users, storage size, and high availability level - you can choose the right edition for your organisation. For more information, see [ownCloud Editions](https://owncloud.com/find-the-right-edition/).
 
-   1. Download the ownCloud using the command:
+  1. Download the ownCloud using the command:
       ```markdown 
 	cd /var/www/
 	wget https://download.owncloud.org/community/owncloud-10.8.0.tar.bz2 && \
 	tar -xjf owncloud-10.8.0.tar.bz2 && \
 	chown -R www-data.owncloud
 ```
-   2. Install the ownCloud using the command:
+  2. Install the ownCloud using the command:
       ```markdown 
      cc maintenance:install \
     --database "mysql" \
@@ -75,12 +75,12 @@ Depending on your organisation's needs - number of users, storage size, and high
     --admin-user "admin" \
     --admin-pass "admin"
 ```
-  3. Configure ownCloud’s Trusted Domains using the command:
+ 3. Configure ownCloud’s Trusted Domains using the command:
      ```markdown
 	myip=$(hostname -I|cut -f1 -d ' ')
 	occ config:system:set trusted_domains 1 --value="$myip"
 ```
-  4. Set your background job mode to [Cron](https://doc.owncloud.com/server/10.8/admin_manual/configuration/server/background_jobs_configuration.html) using the following command.
+ 4. Set your background job mode to [Cron](https://doc.owncloud.com/server/10.8/admin_manual/configuration/server/background_jobs_configuration.html) using the following command.
    ```markdown
 	occ background:cron
 	echo "*/15  *  *  *  * /var/www/owncloud/occ system:cron" \
@@ -88,7 +88,7 @@ Depending on your organisation's needs - number of users, storage size, and high
 	chown www-data.crontab /var/spool/cron/crontabs/www-data
 	chmod 0600 /var/spool/cron/crontabs/www-data
 ```
-  5. Configure Caching and File Locking using the command:
+ 5. Configure Caching and File Locking using the command:
 ```markdown
 	occ config:system:set \
 	   memcache.local \
@@ -101,7 +101,7 @@ Depending on your organisation's needs - number of users, storage size, and high
 	   --value '{"host": "127.0.0.1", "port": "6379"}' \
   	 --type json
 ```
-  6. Configure [Log Rotation](https://linux.die.net/man/8/logrotate) using the command:
+ 6. Configure [Log Rotation](https://linux.die.net/man/8/logrotate) using the command:
      ```markdown
 	FILE="/etc/logrotate.d/owncloud"
 	sudo /bin/cat <<EOM >$FILE
@@ -115,16 +115,14 @@ Depending on your organisation's needs - number of users, storage size, and high
 	}
 	EOM
 ```
-  7. Complete the installation using the command:
+ 7. Complete the installation using the command:
      ```markdown
 	Make sure the permissions are correct
 	cd /var/www/
 	chown -R www-data. owncloud
 ```
-**ownCloud is now installed.** 
-To verify if it's ready to use, navigate to [YourCloud Domain](http://your-owncloud-domain).
-
- 
+**Your ownCloud is now installed.** 
+To verify if it's ready to use, navigate to [YourCloud Domain](http://your-owncloud-domain). 
 For more information, refer [Detailed ownCloud Administration Guide](https://doc.owncloud.com/server/10.8/admin_manual/ownCloud_Admin_Manual.pdf).
 
 # As an administrator, how do I add a user account? 
