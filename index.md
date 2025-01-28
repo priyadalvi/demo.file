@@ -79,7 +79,7 @@ occ config:system:set redis --value '{"host": "127.0.0.1", "port": "6379"}' --ty
 ```
 **Your ownCloud is now installed.** 
 To verify if it's ready to use, navigate to [YourCloud Domain](http://your-owncloud-domain). 
-For more information, refer [Detailed ownCloud Administration Guide](https://doc.owncloud.com/server/10.8/admin_manual/ownCloud_Admin_Manual.pdf).
+For more information, refer [Detailed ownCloud Administration Guide](https://doc.owncloud.com/server/10.15/admin_manual/).
 
 # As an administrator, how do I add a user account? 
 The ownCloud’s default view displays basic information about all the users. To add a new user, 
