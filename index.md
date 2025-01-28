@@ -14,11 +14,10 @@ You can install ownCloud manually with [Docker Image](https://doc.owncloud.org/s
 
 ## Prerequisites and preparation
 
-- Ensure the prerequisites are met and the required or recommended packages are installed before installing ownCloud. For more information, see [Prerequisites and Preparation](https://doc.owncloud.com/server/10.8/admin_manual/installation/quick_guides/ubuntu_18_04.html).
-
+- Ensure the prerequisites are met and the required or recommended packages are installed before installing ownCloud. 
 ## Configuration: Apache and database
  
- - Run these [commands](https://doc.owncloud.com/server/10.8/admin_manual/installation/quick_guides/ubuntu_18_04.html#configure-apache) in your **Terminal** to configure Apache and your database.
+ - Run these [commands](https://doc.owncloud.com/server/10.15/admin_manual/installation/quick_guides/ubuntu_20_04.html#configure-apache) in your **Terminal** to configure Apache and your database.
   
 ## Download and installation
 Depending on your organization's needs — number of users, storage size, and high availability level — you can choose the right edition for your organization For more information, see [ownCloud Editions](https://owncloud.com/find-the-right-edition/).
@@ -45,32 +44,25 @@ Depending on your organization's needs — number of users, storage size, and hi
 	myip=$(hostname -I|cut -f1 -d ' ')
 	occ config:system:set trusted_domains 1 --value="$myip"
   ```
-  4. Set your background job mode to [Cron](https://doc.owncloud.com/server/10.8/admin_manual/configuration/server/background_jobs_configuration.html) by using the following command.
+  4. Set your background job mode to [Cron](https://doc.owncloud.com/server/10.15/admin_manual/configuration/server/background_jobs_configuration.html#cron) by using the following command.
  ```markdown
-	occ background:cron
-	echo "*/15  *  *  *  * /var/www/owncloud/occ system:cron" \
- 	 > /var/spool/cron/crontabs/www-data
-	chown www-data.crontab /var/spool/cron/crontabs/www-data
-	chmod 0600 /var/spool/cron/crontabs/www-data
+       echo "*/15 * * * * /var/www/owncloud/occ system:cron" > /var/spool/cron/crontabs/www-data
+       chown www-data:www-data /var/spool/cron/crontabs/www-data
+       chmod 0600 /var/spool/cron/crontabs/www-data
  ```
  5. Configure Caching and File Locking by using the command:
  ```markdown
-	occ config:system:set \
-	   memcache.local \
-	   --value '\OC\Memcache\APCu'
-	occ config:system:set \
-	   memcache.locking \
- 	  --value '\OC\Memcache\Redis'
-	occ config:system:set \
- 	  redis \
-	   --value '{"host": "127.0.0.1", "port": "6379"}' \
-  	 --type json
+occ config:system:set memcache.local --value '\\OC\\Memcache\\APCu'
+occ config:system:set memcache.locking --value '\\OC\\Memcache\\Redis'
+occ config:system:set redis --value '{"host": "127.0.0.1", "port": "6379"}' --type json
+
 ```
  6. Configure [Log Rotation](https://linux.die.net/man/8/logrotate) by using the command:
  ```markdown
 	FILE="/etc/logrotate.d/owncloud"
 	sudo /bin/cat <<EOM >$FILE
-	/var/www/owncloud/data/owncloud.log {
+	/var/www/owncloud/data/owncloud.log
+        {
 	  size 10M
 	  rotate 12
 	  copytruncate
